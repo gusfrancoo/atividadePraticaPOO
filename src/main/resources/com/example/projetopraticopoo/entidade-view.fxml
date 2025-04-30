@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.projetopraticopoo.controller.EntidadeController"
+      alignment="CENTER" spacing="20">
+
+    <padding>
+        <Insets top="20" right="30" bottom="20" left="30"/>
+    </padding>
+
+    <Label text="Cadastro de Entidade" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="10" alignment="CENTER">
+        <Label text="ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="campoId" promptText="Ex: 1" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Nome:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="campoNome" promptText="Nome da entidade" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="CNPJ:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="campoCnpj" promptText="00.000.000/0001-00" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Tipo:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="campoTipo" promptText="ONG, Abrigo, etc." GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Button text="Cadastrar Entidade" onAction="#onCadastrarEntidadeClick" minWidth="200"/>
+
+    <Label fx:id="successText" textFill="GREEN"/>
+    <Label fx:id="erroText" textFill="RED"/>
+
+</VBox>

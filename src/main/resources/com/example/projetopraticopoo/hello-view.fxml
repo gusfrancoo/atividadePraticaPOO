@@ -1,28 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetopraticopoo.HelloController">
+<VBox xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.projetopraticopoo.controller.HelloController"
+      alignment="CENTER" spacing="20.0">
+
     <padding>
-        <Insets bottom="20" left="20" right="20" top="20" />
+        <Insets top="20" right="30" bottom="20" left="30" />
     </padding>
 
-    <Label text="ID:" />
-    <TextField fx:id="campoId" promptText="Ex: 1" />
+    <Label text="Cadastro de Doador" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
 
-    <Label text="Nome do Colaborador:" />
-    <TextField fx:id="campoNome" promptText="Ex: João da Silva" />
+    <GridPane hgap="10" vgap="10" alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" />
+            <ColumnConstraints hgrow="ALWAYS" />
+        </columnConstraints>
 
-    <Label text="Equipamento:" />
-    <TextField fx:id="campoEquipamento" promptText="Ex: Notebook" />
+        <rowConstraints>
+            <RowConstraints valignment="CENTER" />
+        </rowConstraints>
 
-    <Label text="Data da Solicitação:" />
-    <DatePicker fx:id="campoData" />
+        <Label text="ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="campoId" promptText="Ex: 1" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
-    <Button onAction="#onHelloButtonClick" text="Enviar Solicitação" />
+        <Label text="Nome do Doador:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="campoNome" promptText="Ex: João da Silva" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
-    <Label fx:id="successText" textAlignment="CENTER" textFill="#00ff0f" wrapText="true" />
-   <Label fx:id="erroText" textAlignment="CENTER" textFill="RED" wrapText="true" />
+        <Label text="Telefone:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="campoTelefone" promptText="Ex: 999999999" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Email:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="campoEmail" promptText="Ex: joao@email.com" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Button text="Cadastrar Doador" onAction="#onCadastrarDoadorClick" maxWidth="200" />
+
+    <VBox spacing="5" alignment="CENTER">
+        <Label fx:id="successText" textFill="#00ff00" wrapText="true"/>
+        <Label fx:id="erroText" textFill="RED" wrapText="true"/>
+    </VBox>
+
 </VBox>

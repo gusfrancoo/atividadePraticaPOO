@@ -6,4 +6,6 @@ module com.example.projetopraticopoo {
 
     opens com.example.projetopraticopoo to javafx.fxml;
     exports com.example.projetopraticopoo;
+    exports com.example.projetopraticopoo.controller;
+    opens com.example.projetopraticopoo.controller to javafx.fxml;
 }

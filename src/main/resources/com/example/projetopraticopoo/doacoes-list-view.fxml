@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.projetopraticopoo.controller.DoacaoListController"
+      alignment="CENTER" spacing="20">
+
+    <padding>
+        <Insets top="20" right="30" bottom="20" left="30"/>
+    </padding>
+
+    <Label text="Lista de Doações" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+    <HBox spacing="10">
+        <TextField fx:id="campoFiltro" promptText="Filtrar por doador ou entidade..." />
+        <Button text="Buscar" onAction="#onBuscarClick" />
+        <Button text="Atualizar" onAction="#onAtualizarClick" />
+    </HBox>
+
+    <TableView fx:id="tabelaDoacoes" prefHeight="400" prefWidth="600">
+        <columns>
+            <TableColumn text="ID" fx:id="colId" prefWidth="50"/>
+            <TableColumn text="Doador" fx:id="colDoador" prefWidth="150"/>
+            <TableColumn text="Entidade" fx:id="colEntidade" prefWidth="150"/>
+            <TableColumn text="Item" fx:id="colItemDoador" prefWidth="100"/>
+            <TableColumn text="Quantidade" fx:id="colQuantidade" prefWidth="80"/>
+            <TableColumn text="Data" fx:id="colDataDoacao" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <Label fx:id="erroText" textFill="RED"/>
+
+</VBox>
